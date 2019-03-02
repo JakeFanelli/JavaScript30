@@ -7,6 +7,18 @@
 </head>
 <body>
 <script>
+  const secretCode = "jakef";
+  const pressed = []; 
+
+  window.addEventListener('keyup', (e) => {
+    pressed.push(e.key);
+    console.log(pressed.length - secretCode.length);
+    pressed.splice(0, pressed.length - secretCode.length);
+    //console.log(pressed);
+    if(pressed.join('') === secretCode){
+      console.log("SECRET CODE FOUND");
+    }
+  })
 </script>
 </body>
 </html>
